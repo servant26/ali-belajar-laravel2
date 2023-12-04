@@ -15,12 +15,12 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         // Menggunakan loop untuk membuat 100 data dummy
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             $productName = "Product " . ($i + 1);
             $categoryId = rand(1, 3); // Memilih secara acak category_id antara 1, 2, atau 3
             $description = "Description for Product " . ($i + 1);
-            $price = rand(100000, 1000000); // Harga di antara 10 hingga 1000 (misalnya)
-            $stock = rand(1000, 10000); // Stok di antara 0 hingga 100 (misalnya)
+            $price = rand(10000, 100000); // Harga di antara 10 hingga 1000 (misalnya)
+            $stock = rand(100, 1000); // Stok di antara 0 hingga 100 (misalnya)
 
             // Memasukkan data ke dalam tabel 'products'
             DB::table('products')->insert([

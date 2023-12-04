@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 09:46 AM
+-- Generation Time: Dec 04, 2023 at 04:13 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -54,14 +54,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2023_11_14_182058_create_product_categories_table', 1),
-(6, '2023_11_14_182131_create_products_table', 1),
-(7, '2023_11_14_182508_create_user_groups_table', 1),
-(8, '2023_11_14_182525_create_penggunas_table', 1);
+(9, '2014_10_12_000000_create_users_table', 1),
+(10, '2014_10_12_100000_create_password_resets_table', 1),
+(11, '2019_08_19_000000_create_failed_jobs_table', 1),
+(12, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(13, '2023_11_14_182058_create_product_categories_table', 1),
+(14, '2023_11_14_182131_create_products_table', 1),
+(15, '2023_11_14_182508_create_user_groups_table', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +132,7 @@ CREATE TABLE `products` (
   `created_by` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `price` decimal(15,2) NOT NULL DEFAULT 0.00,
+  `price` int(11) NOT NULL DEFAULT 0,
   `unit` varchar(100) NOT NULL DEFAULT 'pcs',
   `discount_amount` decimal(15,2) DEFAULT NULL,
   `stock` int(11) NOT NULL DEFAULT 0,
@@ -145,30 +144,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `category_id`, `product_code`, `is_active`, `created_at`, `updated_at`, `created_by`, `updated_by`, `description`, `price`, `unit`, `discount_amount`, `stock`, `image`) VALUES
-(2, 'Product 2', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 2', 648359.00, 'pcs', NULL, 2276, NULL),
-(3, 'Product 3', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 3', 598138.00, 'pcs', NULL, 4942, NULL),
-(4, 'Product 4', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 4', 960784.00, 'pcs', NULL, 4982, NULL),
-(5, 'Product 5', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 5', 656650.00, 'pcs', NULL, 8945, NULL),
-(6, 'Product 6', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 6', 986814.00, 'pcs', NULL, 1810, NULL),
-(7, 'Product 7', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 7', 580047.00, 'pcs', NULL, 8990, NULL),
-(8, 'Product 8', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 8', 912230.00, 'pcs', NULL, 3790, NULL),
-(9, 'Product 9', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 9', 345588.00, 'pcs', NULL, 9879, NULL),
-(10, 'Product 10', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 10', 543913.00, 'pcs', NULL, 5045, NULL),
-(11, 'Product 11', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 11', 306795.00, 'pcs', NULL, 1152, NULL),
-(12, 'Product 12', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 12', 832864.00, 'pcs', NULL, 7502, NULL),
-(13, 'Product 13', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 13', 923637.00, 'pcs', NULL, 8508, NULL),
-(14, 'Product 14', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 14', 842956.00, 'pcs', NULL, 2303, NULL),
-(15, 'Product 15', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 15', 468004.00, 'pcs', NULL, 4781, NULL),
-(16, 'Product 16', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 16', 967459.00, 'pcs', NULL, 1728, NULL),
-(17, 'Product 17', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 17', 567717.00, 'pcs', NULL, 8366, NULL),
-(18, 'Product 18', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 18', 613805.00, 'pcs', NULL, 1527, NULL),
-(19, 'Product 19', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 19', 171164.00, 'pcs', NULL, 7284, NULL),
-(20, 'Product 20', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 20', 968269.00, 'pcs', NULL, 8394, NULL),
-(21, 'Product 21', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 21', 906294.00, 'pcs', NULL, 9447, NULL),
-(22, 'Product 22', 3, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 22', 369116.00, 'pcs', NULL, 7309, NULL),
-(23, 'Product 23', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 23', 140392.00, 'pcs', NULL, 7923, NULL),
-(24, 'Product 24', 1, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 24', 176264.00, 'pcs', NULL, 3345, NULL),
-(25, 'Product 25', 2, NULL, 'active', NULL, NULL, NULL, NULL, 'Description for Product 25', 681251.00, 'pcs', NULL, 4943, NULL);
+(1, 'Sepatu Puma', 3, NULL, 'active', NULL, '2023-12-04 07:01:21', NULL, NULL, 'Warna Merah', 60000, 'pcs', NULL, 300, 'images/1701702081.jpg'),
+(2, 'Sepatu Vans', 2, NULL, 'active', NULL, '2023-12-04 07:02:12', NULL, NULL, 'Warna Hitam', 95000, 'pcs', NULL, 600, 'images/1701702132.jpg'),
+(3, 'Sepatu Converse', 4, NULL, 'active', NULL, '2023-12-04 07:03:24', NULL, NULL, 'Warna Hitam Putih', 35000, 'pcs', NULL, 500, 'images/1701702204.jpg'),
+(4, 'Sepatu Nike', 1, NULL, 'active', NULL, '2023-12-04 07:04:26', NULL, NULL, 'Warna Biru', 60000, 'pcs', NULL, 400, 'images/1701702266.jpg'),
+(5, 'Sepatu Adidas', 1, NULL, 'active', NULL, '2023-12-04 07:05:04', NULL, NULL, 'Warna Putih', 65000, 'pcs', NULL, 300, 'images/1701702304.jpg'),
+(6, 'Sepatu Daily', 2, NULL, 'active', '2023-12-04 07:05:47', '2023-12-04 07:05:47', NULL, NULL, 'Warna Coklat', 50000, 'pcs', NULL, 60, 'images/1701702347.jpg');
 
 -- --------------------------------------------------------
 
@@ -193,7 +174,8 @@ CREATE TABLE `product_categories` (
 INSERT INTO `product_categories` (`id`, `category_name`, `created_at`, `updated_at`, `created_by`, `updated_by`, `is_active`) VALUES
 (1, 'Sports', NULL, NULL, NULL, NULL, 'active'),
 (2, 'Daily', NULL, NULL, NULL, NULL, 'active'),
-(3, 'Accessories', NULL, NULL, NULL, NULL, 'active');
+(3, 'Accessories', NULL, NULL, NULL, NULL, 'active'),
+(4, 'School', '2023-12-04 07:02:45', '2023-12-04 07:02:45', NULL, NULL, 'active');
 
 -- --------------------------------------------------------
 
@@ -217,8 +199,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(25, 'Ali Khatami', 'alirpl2643@gmail.com', NULL, '12345678', NULL, '2023-12-02 01:23:49', '2023-12-02 01:23:49'),
-(26, 'Aray', 'arayshinmon@gmail.com', NULL, '12345678', NULL, '2023-12-03 21:11:48', '2023-12-03 21:11:48');
+(1, 'Ali Khatami', 'alirpl2643@gmail.com', NULL, '12345678', NULL, '2023-12-04 07:00:00', '2023-12-04 07:00:00'),
+(2, 'Pedri', 'pedri@gmail.com', NULL, '12345678', NULL, '2023-12-04 07:11:48', '2023-12-04 07:11:48'),
+(3, 'Jude Bellingham', 'jude@gmail.com', NULL, '12345678', NULL, '2023-12-04 07:12:14', '2023-12-04 07:12:14'),
+(4, 'Frenkie De Jong', 'fdj@gmail.com', NULL, '12345678', NULL, '2023-12-04 07:12:39', '2023-12-04 07:12:39');
 
 -- --------------------------------------------------------
 
@@ -314,7 +298,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -332,19 +316,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_groups`

@@ -14,7 +14,7 @@
           <img src="{{ asset('dist/img/profil.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">
+          <a href="" class="d-block">
               {{ Auth::check() ? Auth::user()->name : 'Guest' }}
           </a>
         </div>
@@ -28,7 +28,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-                 <a href="#" class="nav-link">
+                 <a href="" class="nav-link">
                    <i class="nav-icon fas fa-home"></i>
                    <p>
                      Dashboard
