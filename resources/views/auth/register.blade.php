@@ -19,7 +19,7 @@
         <input type="text" class="form-control" placeholder="Nama lengkap" name="name">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-  "></span>
+              <span class="fa fa-user"></span>
             </div>
           </div>
         </div>
