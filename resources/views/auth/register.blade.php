@@ -8,10 +8,13 @@
       <a href="{{ route('register') }}" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Daftar sebagai pengguna baru</p>
 
       <form action="{{ route('register-proses') }}" method="post">
         @csrf
+        @error('name')
+          <small>{{ $message }}</small>
+        @enderror
         <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Nama lengkap" name="name">
           <div class="input-group-append">
@@ -20,6 +23,9 @@
             </div>
           </div>
         </div>
+        @error('email')
+          <small>{{ $message }}</small>
+        @enderror
         <div class="input-group mb-3">
         <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
@@ -28,6 +34,9 @@
             </div>
           </div>
         </div>
+        @error('password')
+          <small>{{ $message }}</small>
+        @enderror
         <div class="input-group mb-3">
         <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">

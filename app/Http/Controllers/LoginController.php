@@ -17,16 +17,21 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
+        ],[
+            'email.required' => 'Mohon isi form ini',
+            'password.required' => 'Mohon isi form ini',
         ]);
     
         $user = User::where('email', $request->email)->first();
     
         if ($user && $request->password === $user->password) {
             Auth::login($user);
+            $request->session()->put('username', $user->name);
             return redirect()->route('dashboard');
         } else {
             return redirect()->route('login')->with('failed', 'Email atau Password Salah');
         }
+        
     }  
 
     public function logout(){
@@ -41,9 +46,17 @@ class LoginController extends Controller
     public function register_proses(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|regex:/^[a-zA-Z\s]+$/',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
+        ],[
+            'name.required' => 'Mohon isi form ini',
+            'name.regex' => 'Masukkan hanya teks',
+            'email.required' => 'Mohon isi form ini',
+            'email.email' => 'Masukkkan inputan bertipe email',
+            'email.unique' => 'Email sudah terdaftar',
+            'password.required' => 'Mohon isi form ini',
+            'password.min' => 'Password minimal 8 digit',
         ]);
     
         $data = [
