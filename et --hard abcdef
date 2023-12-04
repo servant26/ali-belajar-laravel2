@@ -1,0 +1,29 @@
+[33mcommit 107fc0f80d5bf5fba7ea93a3137e9f68eec96a24[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: servant26 <alirpl16@gmail.com>
+Date:   Mon Dec 4 16:47:17 2023 +0800
+
+    menambahkan file database
+
+[33mcommit 2b0f5c65ae0b6e06748f7dc909e2845cd447d50c[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: servant26 <alirpl16@gmail.com>
+Date:   Mon Dec 4 14:31:07 2023 +0800
+
+    memperbaiki halaman register
+
+[33mcommit fa3adab37b5fa9f4b74fd7729b9d204093185810[m
+Author: servant26 <alirpl16@gmail.com>
+Date:   Mon Dec 4 14:15:45 2023 +0800
+
+    menambahkan icon user pada form nama di halaman register
+
+[33mcommit 2d76e9dccf40ab01b4ad0006f2c08d0492aba9d0[m
+Author: servant26 <alirpl16@gmail.com>
+Date:   Mon Dec 4 13:51:09 2023 +0800
+
+    membuat halaman menjadi lebih responsive, menambahkan hyperlink pada sosial media, menambahkan validasi pada form login dan register, menambahkan tanggal dan waktu sebagai pemberi informasi waktu, membuat tahun pada footer menjadi otomatis mengikuti tahun saat ini menggunakan fungsi php
+
+[33mcommit 5d740e9ef0d0ff7dcd3941f5379e07f0b109e246[m
+Author: servant26 <alirpl16@gmail.com>
+Date:   Sat Dec 2 00:27:47 2023 +0800
+
+    first commit
