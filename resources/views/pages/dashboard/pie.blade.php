@@ -5,7 +5,7 @@
 <figure class="highcharts-figure m-3">
     <h3>Pie Chart :</h3>
     <div id="container"></div><br>
-    <a href="/dashboard/column" class="btn btn-primary">Lihat Versi Column Chart</a>
+    <a href="/admin_dashboard/column" class="btn btn-primary">Lihat Versi Column Chart</a>
 </figure>
 <script>
     var category_names = <?php echo json_encode($data['category_names']); ?>;
