@@ -43,6 +43,7 @@
                     <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Stok</th>
+                    <th>Link</th>
                 </tr>
                 </thead>
                 @php
@@ -60,10 +61,11 @@
                         <td>{{ ucwords($p->description) }}</td>                
                         <td>Rp {{ $p->price }}</td>
                         <td>{{ $p->stock }}</td>
+                        <td><a class="btn btn-primary" href="{{ $p->link }}" target="_blank" role="button">Link Produk</a></td>
                     </tbody>
                     @endforeach
                 @else
-                    <td colspan="8">Data tidak ditemukan</td>
+                    <td colspan="9">Data tidak ditemukan</td>
                 @endif
             </table>
         </div>

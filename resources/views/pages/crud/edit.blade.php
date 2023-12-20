@@ -9,6 +9,7 @@
             <form action="/crud/update/{{ $product->id }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
               {{ method_field('PUT') }}
+              <!-- Edit Nama Produk -->
               <div class="mb-3">
                   <label for="inputNama" class="form-label">Nama Produk</label>
                   <input type="text" class="form-control @error('product_name') is-invalid @enderror" id="inputNama" name="product_name" required value="{{ $product->product_name }}" autofocus>
@@ -16,6 +17,8 @@
                       <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
               </div>
+
+              <!-- Edit Kategori Produk -->
               <div class="mb-3">
                 <label for="inputKategori" class="form-label">Kategori</label>
                 <select class="form-select" id="inputKategori" name="category_id" required>
@@ -25,7 +28,9 @@
                         </option>
                     @endforeach
                 </select>
-              </div>                                  
+              </div>
+              
+              <!-- Edit Deskripsi Produk -->
               <div class="mb-3">
                   <label for="inputDeskripsi" class="form-label">Deskripsi</label>
                   <textarea class="form-control @error('description') is-invalid @enderror" id="inputDeskripsi" name="description" rows="3">{{ $product->description }}</textarea>
@@ -33,6 +38,8 @@
                       <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
               </div>
+
+              <!-- Edit Harga Produk -->
               <div class="mb-3">
                   <label for="inputHarga" class="form-label">Harga</label>
                   <input type="number" class="form-control @error('price') is-invalid @enderror" id="inputHarga" name="price" required value="{{ $product->price }}">
@@ -40,6 +47,8 @@
                       <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
               </div>
+
+              <!-- Edit Stok Produk -->
               <div class="mb-3">
                   <label for="inputStok" class="form-label">Stok</label>
                   <input type="number" class="form-control @error('stock') is-invalid @enderror" id="inputStok" name="stock" required value="{{ $product->stock }}">
@@ -47,6 +56,17 @@
                       <div class="invalid-feedback">{{ $message }}</div>
                   @enderror
               </div>
+
+              <!-- Edit Link Produk -->
+              <div class="mb-3">
+                <label for="inputLink" class="form-label">Link Produk</label>
+                <input type="text" class="form-control @error('link') is-invalid @enderror" id="inputLink" name="link" required value="{{ $product->link }}">
+                @error('stock')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+
+              <!-- Edit Gambar Produk -->
               <div class="mb-3">
                   <label for="currentImage">Gambar Saat Ini:</label><br>
                   <img src="{{ asset($product->image) }}" alt="Gambar Produk" width="25%">

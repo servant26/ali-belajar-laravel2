@@ -77,7 +77,7 @@ class LoginController extends Controller
     
         if ($user) {
             Auth::login($user);
-            return redirect()->route('client_dashboard')->with('success', 'Registrasi Berhasil');
+            return redirect()->route('client')->with('success', 'Registrasi Berhasil');
         } else {
             return redirect()->route('login')->with('failed', 'Gagal mendaftar');
         }

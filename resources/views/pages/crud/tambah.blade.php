@@ -8,6 +8,7 @@
           <div class="container mt-1 mb-5">
         <form action="/crud/add" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            <!-- Input Nama Produk -->
             <div class="mb-3">
               <label for="inputNama" class="form-label">Nama Produk</label>
               <input type="text" id="inputNama" name="product_name" class="form-control @error('product_name') is-invalid @enderror" value="{{ old('product_name') }}" autofocus>
@@ -15,6 +16,7 @@
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
+
             <!-- Input Kategori -->
             <div class="mb-3">
               <label for="inputKategori" class="form-label">Kategori</label>
@@ -25,31 +27,42 @@
               </select>
             </div>
           
-          
             <!-- Input Deskripsi -->
             <div class="mb-3">
               <label for="inputDeskripsi" class="form-label">Deskripsi</label>
-              <textarea class="form-control @error('description') is-invalid @enderror" id="inputDeskripsi" name="description" rows="3"></textarea>
+              <textarea class="form-control @error('description') is-invalid @enderror" id="inputDeskripsi" name="description" value="{{ old('description') }}" rows="3"></textarea>
               @error('description')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
+
             <!-- Input Harga -->
             <div class="mb-3">
               <label for="inputHarga" class="form-label">Harga</label>
-              <input type="number" class="form-control @error('price') is-invalid @enderror" id="inputHarga" name="price">
+              <input type="number" class="form-control @error('price') is-invalid @enderror" id="inputHarga" value="{{ old('price') }}" name="price">
               @error('price')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
+            
             <!-- Input Stok -->
             <div class="mb-3">
               <label for="inputStok" class="form-label">Stok</label>
-              <input type="number" class="form-control @error('stock') is-invalid @enderror" id="inputStok" name="stock">
+              <input type="number" class="form-control @error('stock') is-invalid @enderror" id="inputStok" value="{{ old('stock') }}" name="stock">
               @error('stock')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
             </div>
+
+            <!-- Input Link Produk -->
+            <div class="mb-3">
+              <label for="inputLink" class="form-label">Link Produk</label>
+              <input type="text" id="inputLink" name="link" class="form-control @error('link') is-invalid @enderror" value="{{ old('link') }}">
+              @error('link')
+                  <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
+            </div>
+
             <!-- Input Gambar -->
             <div class="mb-5">
               <label for="inputGambar" class="form-label">Unggah Gambar</label>

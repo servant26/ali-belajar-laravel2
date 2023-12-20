@@ -65,6 +65,7 @@ class CrudController extends Controller
             'description'=> 'required|string',
             'price'=> 'required|integer',
             'stock'=> 'required|integer',
+            'link'=> 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ],[
             'product_name.required' => 'Mohon isi form ini',
@@ -72,6 +73,7 @@ class CrudController extends Controller
             'description.required' => 'Mohon isi form ini',
             'price.required' => 'Mohon isi form ini',   
             'stock.required' => 'Mohon isi form ini',
+            'link.required' => 'Mohon isi form ini',
             'image.required' => 'Upload gambar terlebih dahulu'
         ]);
         $imageName = time().'.'.$request->image->extension();
@@ -83,6 +85,7 @@ class CrudController extends Controller
             'description'=> $request->input('description'),
             'price'=> $request->input('price'),
             'stock'=> $request->input('stock'),
+            'link'=> $request->input('link'),
             'image' => 'images/' . $imageName,
         ]);
     
@@ -154,6 +157,7 @@ class CrudController extends Controller
             'description'=> 'required|string',
             'price'=> 'required|integer',
             'stock'=> 'required|integer',
+            'link'=> 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ],[
             'product_name.required' => 'Mohon isi form ini',
@@ -161,6 +165,7 @@ class CrudController extends Controller
             'description.required' => 'Mohon isi form ini',
             'price.required' => 'Mohon isi form ini',
             'stock.required' => 'Mohon isi form ini',
+            'link.required' => 'Mohon isi form ini',
         ]);
 
         $product = Products::find($request->id);
@@ -176,6 +181,7 @@ class CrudController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->stock = $request->input('stock');
+        $product->link = $request->input('link');
         
         $product->save();
 

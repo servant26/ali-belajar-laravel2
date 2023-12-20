@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('unit', 100)->default('pcs');
             $table->decimal('discount_amount',15,2)->nullable();
             $table->integer('stock')->default(0);
+            $table->text('link')->nullable();
             $table->text('image')->nullable();
         });
     }

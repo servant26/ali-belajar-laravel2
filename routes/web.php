@@ -37,10 +37,11 @@ Route::post('/register-proses', [LoginController::class, 'register_proses'])->na
 Route::group(['middleware' => ['auth']], function(){
 // Route Admin
 Route::prefix('admin_dashboard')->group(function () {
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard'); // Ganti 'dashboard' dengan nama yang sesuai
     Route::get('/column', [DashboardController::class, 'column'])->name('column');
     Route::get('/pie', [DashboardController::class, 'pie'])->name('pie');
 });
+
 
 // Route Client
 Route::prefix('client_dashboard')->group(function () {
