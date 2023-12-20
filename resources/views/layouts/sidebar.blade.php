@@ -37,7 +37,7 @@
                  </a>
                  <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="/dashboard" class="nav-link">
+                    <a href="/admin_dashboard" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Card</p>
                     </a>
@@ -45,7 +45,7 @@
                 </ul>
                  <ul class="nav nav-treeview">
                    <li class="nav-item">
-                     <a href="/dashboard/column" class="nav-link">
+                     <a href="/admin_dashboard/column" class="nav-link">
                        <i class="far fa-circle nav-icon"></i>
                        <p>Column Chart</p>
                      </a>
@@ -53,7 +53,7 @@
                  </ul>
                  <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="/dashboard/pie" class="nav-link">
+                    <a href="/admin_dashboard/pie" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Pie Chart</p>
                     </a>

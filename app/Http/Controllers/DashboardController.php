@@ -69,6 +69,13 @@ class DashboardController extends Controller
     
         return view('pages.dashboard.pie')->with('data', $data);
     }
+
+    public function client(){
+        $products = Products::join('product_categories', 'products.category_id', '=', 'product_categories.id')
+        ->select('products.*', 'product_categories.category_name')
+        ->paginate(5);
+        return view("pages.client.index",["products"=>$products]);
+    }
     
 }
 

@@ -27,10 +27,16 @@ class LoginController extends Controller
         if ($user && $request->password === $user->password) {
             Auth::login($user);
             $request->session()->put('username', $user->name);
-            return redirect()->route('dashboard');
+        
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard');
+            } else if ($user->role === 'client') {
+                return redirect()->route('client');
+            }
         } else {
             return redirect()->route('login')->with('failed', 'Email atau Password Salah');
         }
+        
         
     }  
 
@@ -63,13 +69,15 @@ class LoginController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
+            'role' => 'client',
         ];
-    
+        
         $user = User::create($data);
+        
     
         if ($user) {
             Auth::login($user);
-            return redirect()->route('dashboard')->with('success', 'Registrasi Berhasil');
+            return redirect()->route('client_dashboard')->with('success', 'Registrasi Berhasil');
         } else {
             return redirect()->route('login')->with('failed', 'Gagal mendaftar');
         }

@@ -35,12 +35,18 @@ Route::post('/register-proses', [LoginController::class, 'register_proses'])->na
 
 
 Route::group(['middleware' => ['auth']], function(){
-// Route Dashboard
-Route::prefix('dashboard')->group(function () {
+// Route Admin
+Route::prefix('admin_dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/column', [DashboardController::class, 'column'])->name('column');
     Route::get('/pie', [DashboardController::class, 'pie'])->name('pie');
 });
+
+// Route Client
+Route::prefix('client_dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'client'])->name('client');
+});
+
 // Route CRUD
         Route::prefix('crud')->group(function () {
         Route::get('/', [CrudController::class, 'index']);
@@ -71,6 +77,7 @@ Route::prefix('dashboard')->group(function () {
 
     //Route Bio
     Route::get('/bio', [BioController::class, 'bio']);
+    Route::get('/bioClient', [BioController::class, 'bioClient']);
 });
 
 

@@ -24,6 +24,7 @@
                 <thead>
                 <tr>
                     <th>No</th>
+                    <th>Role</th>
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Tanggal Mendaftar</th>
@@ -36,6 +37,7 @@
                     @foreach ($user as $u)
                         <tbody>
                             <td>{{ $no++ }}</td>
+                            <td>{{ $u->role }}</td>
                             <td>{{ ucwords($u->name) }}</td>                       
                             <td>{{ $u->email }}</td>
                             <td>{{ $u->created_at }}</td>
